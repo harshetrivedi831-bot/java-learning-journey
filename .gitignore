@@ -1,0 +1,9 @@
+# Java compiled files
+*.class
+
+# Build output
+bin/
+target/
+
+# Eclipse settings
+.settings/
