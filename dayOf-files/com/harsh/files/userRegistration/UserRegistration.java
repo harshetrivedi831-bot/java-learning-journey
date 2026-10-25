@@ -1,6 +1,8 @@
 package com.harsh.files.userRegistration;
 
 import java.util.Scanner;
+
+import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 /*
  * User class is responsible to initialize object states from console input.
  */
@@ -8,7 +10,7 @@ class User {
 	String name;
 	String email;
 	String address;
-	String password;
+	String mobile;
 	/*
 	 * default constructor cause input to be injected from console.
 	 */
@@ -37,7 +39,7 @@ class UserDetails{
 		System.out.println("Name: " +user.name);
 		System.out.println("Email: " + user.email);
 		System.out.println("Address: " + user.address);
-		System.out.println("Password: " + user.password);
+		System.out.println("Password: " + user.mobile);
 		counter.countUser(counter);
 	}
 }
@@ -67,16 +69,57 @@ public class UserRegistration {
 			if(userInput.equalsIgnoreCase("Yes")) {
 				
 				System.out.println("Enter the name: ");
-				user.name= scn.nextLine();
+				
+				String name= scn.nextLine();//read and match with each regex!!
+				if(name.matches("[a-zA-Z]+")) {
+					user.name=name;
+				}
+				else
+				{
+					System.out.println("invalid name");
+					continue;
+				}
+				
 				
 				System.out.println("Enter the email: ");
-				user.email= scn.nextLine();
-
+				/*
+				 * implemented email validation before reading.
+				 */
+				
+				String email= scn.next();//read if true then inject in object state
+				if(email.contains("@")) {
+					user.email=email;
+				}
+				else
+				{System.out.println("invalid email");
+					/*
+					 * skipping current iteration using continue so this employee will not register
+					 */
+					continue;
+				}
+				
+				scn.nextLine();
 				System.out.println("Enter the address: ");
-				user.address= scn.nextLine();
+				String address= scn.nextLine();
+				if(address.matches("[a-zA-z0-9 ,-/]+")) {
+					user.address=address;
+				}
+				else
+				{
+					System.out.println("invalid address");
+					continue;
+				}
 
 				System.out.println("Enter the mobileNo: ");
-				user.password = scn.nextLine();
+				String mobile= scn.nextLine();
+				if(mobile.matches("[0-9]+")) {
+					user.mobile=mobile;
+				}
+				else
+				{
+					System.out.println("invalid mobile");
+					continue;
+				}
 				
 				userDetails.displayUserDetials(user);
 				
