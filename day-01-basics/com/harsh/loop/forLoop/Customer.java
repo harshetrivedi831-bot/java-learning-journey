@@ -1,4 +1,4 @@
-package com.harsh.loops.forLoop;
+package com.harsh.loop.forLoop;
 
 public class Customer {
 	String name;

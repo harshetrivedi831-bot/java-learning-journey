@@ -34,24 +34,4 @@ Confirmation Sent
 Order Placed Successfully
 ```
 
-## Abstraction Condition
 
-### Customer Should Know Only
-
-```java
-placeOrder()
-```
-
-### Customer Should Not Know How These Methods Work Internally
-
-```java
-validateRestaurant()
-checkItems()
-calculateBill()
-applyDiscount()
-processPayment()
-generateOrderId()
-sendConfirmation()
-```
-
-These methods should be hidden from the customer and executed internally by the `placeOrder()` method, demonstrating the concept of **Abstraction**.

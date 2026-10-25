@@ -1,4 +1,4 @@
-package com.harsh.oops.abstraction3;
+package com.harsh.oops.onlineBankingSystem;
 
 public class SavingAccount extends BankAccount {
 	/*
@@ -30,14 +30,9 @@ public class SavingAccount extends BankAccount {
        double quaterlyInterest = annualInterest/4;
         System.out.println("Quarterly Interest: " + quaterlyInterest);
     }
-	/*
-	 * display saving account info
-	 */
+	
 	void displaySavingAccountInfo() {
-		/*
-		 * No repetition re use parent class method
-		 * 
-		 */
+		
 		this.displayBankAccountInfo();
 		System.out.println("RateOfInterest : " + this.rateOfInterest);
 	}

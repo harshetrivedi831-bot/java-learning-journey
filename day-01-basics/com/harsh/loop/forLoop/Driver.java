@@ -1,4 +1,4 @@
-package com.harsh.loops.forLoop;
+package com.harsh.loop.forLoop;
 
 public class Driver {
 	public static void main(String[] args) {

@@ -1,12 +1,16 @@
-package com.harsh.oops.abstraction1;
+package com.harsh.oops.foodOrderingSystem;
 
 public class FoodOrder {
-
+	/*
+	 * placeOrder() method exposed to user which what is happening not how order is getting placed.
+	 * how order is getting placed: core implementations are not exposed to user, just to bring
+	 * simplicity and remove complexity other wise user needs to know about those operations as well.
+	 */
+	/*
+	 * user has to provide basic details --- to place order.
+	 */
 	public void placeOrder(double orderAmount, int quantity, String email) {
-		/*
-		 * below functionality are not exposed to user.
-		 * only placeOrder() can use it.
-		 */
+		
 		this.restaurantAvailability();
 		this.itemAvaialbility();
 		this.calculateBill(orderAmount, quantity);
@@ -14,7 +18,9 @@ public class FoodOrder {
 		this.processPayment(quantity);
 		this.sendEmail(email);
 	}
-
+/*
+ * below are the core implementations!!
+ */
 	private boolean restaurantAvailability() {
 		System.out.println("FoodOrder.restaurantAvailability()");
 		return true;
@@ -31,10 +37,6 @@ public class FoodOrder {
 		return orderAmount;
 	}
 
-	/*
-	 * I did not applied discount here its just a design which tells discount to be
-	 * applied on orderAmount
-	 */
 	private void applyDisocunt(double orderAmount) {
 		if (orderAmount > 1000) {
 			System.out.println("Apply disocunt...");
@@ -44,10 +46,6 @@ public class FoodOrder {
 			}
 		}
 	}
-
-	/*
-	 * here also finalPaymnet to be applied on disocuntedAmount just a design
-	 */
 	private void processPayment(double disountedAmount) {
 		System.out.println("FoodOrder.processPayment()");
 	}

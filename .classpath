@@ -3,5 +3,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="day-01-basics"/>
+	<classpathentry kind="src" path="day-30-abstraction"/>
+	<classpathentry kind="src" path="day-31-methodOverloading"/>
+	<classpathentry kind="src" path="day-31-methodOverriding(Polymorphism)"/>
+	<classpathentry kind="src" path="mini-projects"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

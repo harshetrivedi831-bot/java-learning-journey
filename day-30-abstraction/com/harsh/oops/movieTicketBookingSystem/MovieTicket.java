@@ -1,10 +1,7 @@
-package com.harsh.oops.abstraction2;
+package com.harsh.oops.movieTicketBookingSystem;
 
 public class MovieTicket {
-	/*
-	 * Movie Ticket for a customer so customer name,email,seats registration and
-	 * moviePrice details to be collected.
-	 */
+	
 	private String movieName;
 	private float price;
 	private int noOfSeats;
@@ -46,10 +43,7 @@ public class MovieTicket {
 		return email;
 	}
 
-	/*
-	 * functionality exposed to user to book ticket where as hiding how ticket is
-	 * being booked.
-	 */
+	
 	public void bookTicket(String movieName, float price, int noOfSeats, String email) {
 		this.seatsAvailability(noOfSeats);
 		double totalAmount = this.totalAmount(noOfSeats, price);
@@ -63,7 +57,7 @@ public class MovieTicket {
 	}
 
 	/*
-	 * business requirement :---------------
+	 * core implementation behind movie ticket booking
 	 */
 	public boolean seatsAvailability(int noOfSeats) {
 		System.out.println("MovieTicket.bookTicket() " + noOfSeats);
@@ -74,9 +68,6 @@ public class MovieTicket {
 		return noOfSeats * price;
 	}
 
-	/*
-	 * 
-	 */
 	public double applyDiscount(int noOfSeats, double totalAmount) {
 		double discount = 0;
 		double totalAmountAfterDiscount = totalAmount;
@@ -98,9 +89,6 @@ public class MovieTicket {
 		return Math.random() * 100;
 	}
 
-	/*
-	 * processPayment - payment after discount amount
-	 */
 	public void processPayment(double totalAmountAfterDiscount) {
 		System.out.println("MovieTicket.processPayment()" + totalAmountAfterDiscount);
 	}

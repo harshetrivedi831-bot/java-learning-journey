@@ -1,17 +1,14 @@
-package com.harsh.oops.abstraction3;
+package com.harsh.oops.onlineBankingSystem;
 
 public class BankAccount {
-/*
- * Private fields such that direct modification can be restricted.
- */
+
 	private String holderName;
 	private double balance;
 	private String accountNumber;
-	/*
-	 * constructor to initilise the field.
-	 */
+	
 	public BankAccount(String holderName, double balance, String accountNumber) {
 		super();
+		
 		if(holderName.isEmpty()) {
 			return;
 		}
@@ -74,13 +71,9 @@ public class BankAccount {
 		System.out.println("Account holder name :" + this.holderName);
 	}
 	/*
-	 * A functionality to open an account -- expose to user
-	 * not core functionality within the account opening functionality
+	 * openAccount functionality exposed to user
 	 */
 	public void openAccount() {
-		/*
-		 * on calling open account , these abstract core functionality to be called out.
-		 */
 		this.verifyCustomerDetails();
 		this.validatePan();
 		this.generateAccountNumber();
@@ -88,7 +81,7 @@ public class BankAccount {
 		this.welcomeEmail();
 	}
 	/*
-	 * To open an account core functionality to be here
+	 * core functionalities to open a new Account
 	 *
 	 */
 	private void verifyCustomerDetails() {
