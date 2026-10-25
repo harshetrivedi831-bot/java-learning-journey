@@ -53,21 +53,57 @@ public class UserRegistration {
 	UserDetails userDetails=new UserDetails();
 	
 	void userRegistration() {
+		boolean isTrue=false;
+		/*
+		 * Loop to allow multiple registrations using while.
+		 */
+		while(!isTrue) {
+			//User decision-based registration flow using if-else
+			System.err.println("Wanna register user(Yes/No)?");
+			// added control flow decision of registration 
+			String userInput = scn.next();
+			scn.nextLine();
+			
+			if(userInput.equalsIgnoreCase("Yes")) {
+				
+				System.out.println("Enter the name: ");
+				user.name= scn.nextLine();
+				
+				System.out.println("Enter the email: ");
+				user.email= scn.nextLine();
+
+				System.out.println("Enter the address: ");
+				user.address= scn.nextLine();
+
+				System.out.println("Enter the mobileNo: ");
+				user.password = scn.nextLine();
+				
+				userDetails.displayUserDetials(user);
+				
+			}
+			else
+			{
+				System.out.println("Thanks for coming!!");
+				break;
+			}
+			/*
+			 * to confirm used wants to proceed with?
+			 */
+			System.out.println("Do you want to continue(Yes/No)?");
+			String confirm = scn.next();
+			if(confirm.equalsIgnoreCase("yes")) {
+				isTrue=false;
+			}
+			else
+			{
+				isTrue=true;
+			}
+			
+		}
 		
-		System.out.println("Enter the name: ");
-		user.name= scn.nextLine();
-
-		System.out.println("Enter the email: ");
-		user.email= scn.nextLine();
-
-		System.out.println("Enter the address: ");
-		user.address= scn.nextLine();
-
-		System.out.println("Enter the mobileNo: ");
-		user.password = scn.nextLine();
 		
-		userDetails.displayUserDetials(user);
-
 	}
-
 }
+
+
+
