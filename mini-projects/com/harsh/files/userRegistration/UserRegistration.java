@@ -7,24 +7,74 @@ import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
  * User class is responsible to initialize object states from console input.
  */
 class User {
-	String name;
-	String email;
-	String address;
-	String mobile;
+	private String name;
+	private String email;
+	private String address;
+	private String mobile;
+	/*
+	 * getters and setters to read and set the data from outside the class 
+	 * to give controlled accesss to user such that invalid data before going to 
+	 * customer object should be validated first.
+	 */
+	
 	/*
 	 * default constructor cause input to be injected from console.
 	 */
 	User(){
 		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}	
 }
 /*
  * Counter: class responsible to count no of registration.
  */
 class Counter{
-	static int count;
+	private static int count;
+	
+	public static int getCount() {
+		return count;
+	}
+
+	public static void setCount(int count) {
+		Counter.count = count;
+	}
+	/*
+	 * member function if called then it will increament the count
+	 */
 	void countUser(Counter count) {
 		Counter.count++;
+		System.out.println();
 		System.out.println("Total user registration: " + Counter.count);
 	}
 }
@@ -32,14 +82,18 @@ class Counter{
  * UserDetails to display user registration details
  */
 class UserDetails{
-	int count=0;
+	//int count=0;
 	//User user =new User();//new create new object with fields and null
 	Counter counter = new Counter();
 	void displayUserDetials(User user) {//User user--> refer same object who got values
-		System.out.println("Name: " +user.name);
-		System.out.println("Email: " + user.email);
-		System.out.println("Address: " + user.address);
-		System.out.println("Password: " + user.mobile);
+		System.out.println("Name: " +user.getName());
+		System.out.println("Email: " + user.getEmail());
+		System.out.println("Address: " + user.getAddress());
+		System.out.println("Password: " + user.getMobile());
+		System.out.println(user.getName()+" is regsitered succesfully");
+		/*
+		 * after printing call -- counterUser to add counter upon successful registration
+		 */
 		counter.countUser(counter);
 	}
 }
@@ -72,7 +126,12 @@ public class UserRegistration {
 				
 				String name= scn.nextLine();//read and match with each regex!!
 				if(name.matches("[a-zA-Z]+")) {
-					user.name=name;
+					/*
+					 * if name has all the character as per regex so just set that
+					 * in user object
+					 */
+					user.setName(name);
+					
 				}
 				else
 				{
@@ -88,7 +147,7 @@ public class UserRegistration {
 				
 				String email= scn.next();//read if true then inject in object state
 				if(email.contains("@")) {
-					user.email=email;
+					user.setEmail(email);
 				}
 				else
 				{System.out.println("invalid email");
@@ -102,7 +161,7 @@ public class UserRegistration {
 				System.out.println("Enter the address: ");
 				String address= scn.nextLine();
 				if(address.matches("[a-zA-z0-9 ,-/]+")) {
-					user.address=address;
+					user.setAddress(address);
 				}
 				else
 				{
@@ -113,7 +172,7 @@ public class UserRegistration {
 				System.out.println("Enter the mobileNo: ");
 				String mobile= scn.nextLine();
 				if(mobile.matches("[0-9]+")) {
-					user.mobile=mobile;
+					user.setMobile(mobile);
 				}
 				else
 				{
