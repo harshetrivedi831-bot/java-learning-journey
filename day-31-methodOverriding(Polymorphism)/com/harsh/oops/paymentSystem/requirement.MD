@@ -217,7 +217,7 @@ By implementing this requirement, I practiced:
 - Designing parent-child relationships.
 - Applying encapsulation to secure data.
 - Using inheritance to eliminate duplicate code.
-- Understanding runtime polymorphism through parent references.
+- Understanding runtime polyMorphism through parent references.
 - Processing heterogeneous objects through a single array.
 - Building validation logic using conditional statements.
 - Using loops to automate transaction processing.
