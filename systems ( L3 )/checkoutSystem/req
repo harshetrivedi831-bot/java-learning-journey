@@ -1,0 +1,8 @@
+Checkout page pe customer ek coupon code likhta hai.
+ Business ke rules: SAVE10 pe 10% off. FIRST20 pe 20% off, par zyada se zyada Rs.200. Galat ya khali code ho to amount waisa hi rahe.
+
+Kya banana hai
+applyCoupon(String code, double total) likho jo final amount return kare
+Code me extra space ya chhota-bada letter ho to bhi chale (" save10 ")
+Null code ya negative total pe crash nahi hona chahiye
+main me kam se kam 5 test cases print karo
