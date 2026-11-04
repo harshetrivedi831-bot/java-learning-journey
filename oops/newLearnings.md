@@ -154,3 +154,56 @@ Example:
 interface Constants {
     int MAX_SIZE = 100;
 }
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#3 Novemeber 2030
+--------------------------------------------------
+
+**learnt and understood toString()**
+
+"Sometimes we need a meaningful string representation of an object's state. In such cases, we override toString() and provide our own implementation using the object's properties and desired formatting."
+```
+--------------------------------------------------
+**Marker interface**
+its purpsoe in java is to grant permission 
+like cloning and object serialization which is critical activity
+without grnting permission, we will be ending up an exceeption. 
+And to confirm that current class is clonable or not so use runtime
+operaotr named instanceOf Which will check at runtime and act accordingly.
+*So u have two ways to copy the object*
+- create another object ( calling a constructor)
+- create a clone using clone() ( better here we wont call a constrcutir)
+*Why cloning is not allowed to do without permissio*
+people can missue the data that why its a critical activity.
+so without permission object should not be copied. 
+------------------------------------------------------
+**Serilization?**
+Serialization is the process of converting an object into a byte stream so that it can be transmitted over a network, stored in a file system, or persisted in a database. Deserialization is the reverse process of reconstructing the object from the byte stream.
+
+*Original object will not be transferred only byte transfered*?
+"The object cannot exist outside the memory of its JVM. Therefore, we serialize its state into a byte stream for storage or transmission."
+
+**code to serialize?**
+1. what we serialize ? an object so create a class and have proerties.
+class message done 
+>>FileOuputStream - create a file and write data into it.
+- .txt or .ser anuthing ******
+>>ObjectOutputStream : this class converts object into bytes and we pass file as a reference so after conversion it will write inside file.
+```
+FileOutputStream creates a connection with the file and can write bytes. ObjectOutputStream converts the object into a byte stream and uses the FileOutputStream to store those bytes in the file. When we call writeObject(), the object's state is serialized and written to the file.
+```
+**Not serializable exception**
+this exception will come when we try to seriaise an object without taking permission from the author of the class. wihtout permission we can perform such a special behvaiour or activity.
+
+**de-serialisation**
+It is a process of conveting bytestream back to new object and stored in heap.
+**code to de-serialise**
+here FileInputStream knows how to create a file and where to read
+ObjectInputStream knows how to re cosntruct new object out of byte
+and it shits on top of file 
+use readObject to read the byte and return Object which needs to be downcast.
+>>here when u read the byte u will be getting Object asit is common but u need your object back so downcast Object to x. downcast to raget.
+
+**when ever a data goes from one jvm to another jvm definitely serialisation will be there**
+
+**whever u are reading its input and writing output**???????????

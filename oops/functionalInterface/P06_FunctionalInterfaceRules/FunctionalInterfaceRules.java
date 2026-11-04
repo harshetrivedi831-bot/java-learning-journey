@@ -26,6 +26,10 @@ public class FunctionalInterfaceRules  extends Object{
 		boolean equals(Object obj);
 		public String toString();
 		int hashCode();
+		/*
+		 * clone() is not allowed cause it is protected only public methods
+		 * are allowed in an interface
+		 */
 		 
 	}
 	public static void main(String[] args) {
