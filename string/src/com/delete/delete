@@ -1,0 +1,176 @@
+
+break inside switch
+↓
+prevent fall-through
+---------------------------------------------
+s1 = new Student();
+what is changed ?
+s1 got new reference so reference changed + new object created 
+-------------------------------------
+> cafe management system (Self-thinking)
+used and connects concepts : switch , break , while !!
+where in if user enter 
+1---give tea
+2-- give coffeee
+3-- sandwitch
+1) what if enters 4 -- ask again and keep asking again
+~ here we dont know how many time user will input so while loop
+~ what if enters correct so how program will be stopped.
+a) firstly to come out of loop break is there 
+2) to come out of loop, chnage the condiotion of loop will lead to
+loop termination. from where ? u know.
+------------------------------------------------------------------
+#skip this from your memory as well#
+
+older versions garbage collector were not work on scp but with newer versions maybe garbage collector works on scp
+------------------------------------------------------------------
+Object class equals()
+↓
+Reference comparison
+
+==      -> Reference comparison
+
+String class overrides equals()
+↓
+Content comparison (String class)
+------------------------------------------------------------------
+
+line no 40 to 137 summary is here : 
+Compile-time optimization shifts predictable work from runtime to compile time, reducing runtime overhead and improving performance.
+------------------------------------------------------------------
+Run-time concatenation ?
+
+Literal + Variable
+
+Example:
+
+String part = "Ja";
+
+String s = part + "va";
+
+Why no compile-time concatenation?
+
+1. A variable is involved.
+2. Variables may hold different values.
+3. Isi wajah se compiler safe prediction nahi karta.
+4. Concatenation is performed at runtime.
+5. Runtime work is greater than compile-time concatenation.
+
+Hence:
+Compiler generates code that directly uses the final literal.(result)
+At runtime, the JVM uses the corresponding SCP entry instead of performing concatenation.
+
+Literal + Literal
+→ Compile Time
+
+Literal + Variable
+→ Runtime
+------------------------------------------------------------------
+
+Compile Time Concatenation
+
+Why does it happen?
+
+1. All operands are literals/constants.
+
+Example:
+
+"Ja" + "va"
+
+Compiler already knows the final result is "Java".
+
+2. Since the result is predictable, compiler performs concatenation during compilation instead of runtime.
+
+3. This avoids extra runtime work such as:
+   - reading operands
+   - concatenating strings
+   - creating the result after calculation
+
+4. Compiler optimizes:
+
+"Ja" + "va"
+
+into
+
+"Java"
+
+5. The optimized literal can be stored in SCP and reused.
+
+Benefits:
+- Better performance
+- Less runtime work
+- Better memory utilization through SCP reuse
+
+Compile-time optimization shifts predictable work from runtime to compile time, reducing runtime overhead and improving execution performance.
+------------------------------------------------------------------
+
+Performance*** here means reducing work at runtime.
+
+If the compiler can determine the result in advance,
+it performs the work during compilation.
+
+As a result, the JVM does less work while the program is running.
+
+Less runtime work
+↓
+Faster execution
+↓
+Better response time
+------------------------------------------------------------------
+Without optimization:
+Runtime:
+Read "Ja"
+Read "va"
+Concatenate
+Create Result
+Assign Reference
+
+Optimization means reducing unnecessary work and using resources more efficiently.
+
+Benefits may include:
+- Faster execution
+- Less runtime work
+- Better response time
+- Lower memory usage (sometimes)
+
+
+------------------------------------------------------------------
+intern()
+
+1. Called on a Heap String.
+
+2. SCP is searched for the same content.
+
+3. If found:
+   → Return SCP reference.
+
+4. If not found:
+   → Add equivalent String into SCP.
+   → Return SCP reference.
+   ------------------------------------------------------------------
+   length vs length() both return int
+ length() is String class used to count no of characters inside String and same method is not there in array
+   length attribute in array returns no of elements in an array and same attribute is not there in String
+   
+   int[] arr = new int[3];
+	String str="Asif";
+
+	System.out.println(arr.length);//3
+	System.out.println(str.length());//4
+	==========================================
+	
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

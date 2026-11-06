@@ -1,0 +1,41 @@
+// onject creation using literal happens in scp --
+	// area in heap, before object creation it checks
+	// first is there any object which holds Harsh
+	// if yes dont create object and reference v points
+	// to existing object else create new 
+	
+	// String is a sequence of character
+	// It is immutable means once created can not be changed.
+	//if tried to change, new Object created that is 
+	// immutability.
+	
+	=================================
+	new nahi padhna hai just practice till literals
+		=================================
+========================todays###==============================================
+void practiceSet3() {
+	String s1 = "Java";
+	String s2 = "Java";
+
+	s1 = s1.concat("");
+
+	System.out.println(s1 == s2);//true
+}
+this is implementation logic of concat() method :
+-------
+int otherLen = str.length();
+
+if (otherLen == 0) {
+    return this;
+}
+--------
+where it will calculate the length of passed argument(emptyString)
+ in String if 0
+retuen current object on which concat method called so no new object will
+be invoked. thats why true
+============================================================================
+String s2 = "Ja" + "va";
+"Ja" and "va" are compile-time String constants. The compiler evaluates:
+"Ja" + "va"  →  "Java"
+----------------------------------------
+Strin
