@@ -1,0 +1,21 @@
+EcomDiscount.java requiremnt :
+/*
+As part of e-commerce application, you need to discount Api(method) which will
+calculate the discount based on customer type.
+Customer Type:
+1. Gold → 20%
+2. Silver → 10%
+3. Regular → 5%
+Max discount: 2500
+Minimum purchase: 1000 → if customer purchase values are above 1000 then only discount
+is applicable.
+Follow java naming conventions and single responsibility(part of SOLID)
+*/
+========HOME WORK==============
+1) I did it using if-else but same thing can be done using switch
+U will do it : dont hardcode lots of problem is there in program 
+its about the performance. 
+2) here single reponsibility means one class one feature not functions.
+one feature : oops or calculate discount based on customer type.
+methods can be 20 in a class but feature should be ones
+like what class is all about like fund transfer , reset password.

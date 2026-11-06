@@ -1,0 +1,33 @@
+Create a Book Management Java program.
+
+1.Create a Book class with:
+-title
+-price
+
+2.Create one array of Book objects.
+- Store 5 different books in the array.
+
+3.Use a for loop to traverse the array.
+- Print each book's title and price in a formatted manner.
+
+4.During traversal, also:
+- Find and print the most expensive book.
+logic : 
+1. add it outside of loop : float assumedExpensiveBook =0.0f;
+// menaingful variable name
+*****highestPrice varible name is good as comapred to assumedExpensiveBook
+2. add inside the loop ; 
+		if(book[index].price>assumedExpensiveBook)
+		{
+			assumedExpensiveBook=book[index].price;
+		}
+3. print assumedExpensiveBook outside of loop
+- Calculate and print the total price of all books.
+1. Assume sum=0 outside of loop to print result outside
+2. within loop after calcualting current object price i add it with 0 
+sum=sum + book[index].price;
+-Calculate and print the average price of the books.
+1. assumed average is 0 
+2. find using formula ; 
+average = (sum / book.length);
+3.print

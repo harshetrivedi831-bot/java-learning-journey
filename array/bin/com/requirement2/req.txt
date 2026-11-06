@@ -1,0 +1,52 @@
+
+this is the requiremnt try next day !!
+A small e-commerce company wants a Java program to process customer orders.
+
+Requirement
+The system should maintain information about multiple orders.
+Each order should have:
+	Order ID
+	Customer name
+	Product name
+	Quantity
+	Price per item
+	Customer type
+	
+The company has two types of customers:
+	Regular Customer
+	Premium Customer
+A Premium Customer receives a discount based on the order amount:
+	Order amount below ₹1,000 → no discount
+	₹1,000 to ₹4,999 → 10% discount
+	₹5,000 and above → 20% discount
+A Regular Customer does not receive this discount.
+
+The system should process every order and display:
+	Order details
+	Original order amount
+	Discount amount
+	Final payable amount
+	Whether the customer received a discount
+After processing all orders, the system should display:
+	Total number of orders
+	Total sales amount before discounts
+	Total discount given
+	Total amount collected after discounts
+
+==========================================
+
+public class Order {
+	String orderID;
+	String customerName;
+	String productName;
+	int productQuantity;
+	int pricePerItem;
+	String customerType;
+*****Remember one thing evertime u create an class : look at attributes 
+certain attributes par operation perform karna padta hai to vahi 
+method bana ke kar lo 
+like quantity * price gives = finalAmountBeforeDiscount
+Motly u will be dealing with object so have a method and calcualtion
+2. 
+learn where to write return discount; basically return just before 
+method execution to be ended.

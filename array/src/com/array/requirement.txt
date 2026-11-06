@@ -1,0 +1,13 @@
+Home Work:
+
+✓ Declare two arrays: one for storing the book titles and the other for storing
+ their prices.
+
+✓ Initialize the arrays with some sample book titles and prices.
+
+✓ Print the list of books with their titles and prices in a formatted manner.
+
+----------------------------------------
+Book and BookDriver is fine 
+for a good design in both arrays should cosnist of book objects only.
+not a piece of object attributes.
